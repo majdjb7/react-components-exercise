@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Dummy } from './components/Dummy'
+import Spam from './components/Spam'
 import Spamalot from './components/Spamalot';
 import NavBar from './components/NavBar';
 import Checkout from './components/Checkout';
@@ -141,6 +142,7 @@ export class App extends Component {
           <h4 className="ex-title">Exercise 1</h4>
           <div className="exercise" id="ex-1">
             {/* your code here... */}
+            <Dummy/>
           </div>
         </div>
 
@@ -148,6 +150,8 @@ export class App extends Component {
           <h4 className="ex-title">Exercise 2</h4>
           <div className="exercise" id="ex-2">
             {/* your code here... */}
+            <Spam/>
+            <Spamalot/>
           </div>
         </div>
 
@@ -155,6 +159,9 @@ export class App extends Component {
           <h4 className="ex-title">Exercise 4</h4>
           <div className="exercise" id="ex-4">
             {/* your code here... */}
+            <NavBar/>
+            <Menu/>
+            <Checkout/>
           </div>
         </div>
       </div>
