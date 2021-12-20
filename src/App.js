@@ -8,7 +8,14 @@ import Menu from './components/Menu';
 
 // Spot Check 1
 export class Sum extends Component {
-  // your code here...
+  render() {
+    let num1 = 100
+    let num2 = 73
+    let sum = num1 + num2
+    return(
+      <div>The sum is {sum}</div>
+    )
+  }
 }
 
 // Spot Check 2
@@ -17,14 +24,20 @@ class Nav extends Component {
     return (
       <div id="nav">
         <span>Home</span>
+        <br></br>
         <span>About</span>
+        <LandingPage/>
       </div>
     )
   }
 }
 
 class LandingPage extends Component {
-  // your code here...
+  render() {
+    return(
+      <h1>Welcome!</h1>
+    )
+  }
 }
 
 // Spot Check 3
@@ -40,23 +53,42 @@ class Profile extends Component {
 }
 
 // Spot Check 4
-export const Banner = function () {
+export const Banner =  () => <div className="banner">THE LOGO</div>
 
-}
 
 
 // Spot Check 5
 export class About extends Component {
   /* your code here... */
+  render() {
+    return (
+      <div>
+        <p>ABOUT!!!</p>
+        <SignUp/>
+        <Blurb/>
+      </div>
+    )
+  }
 }
 
 
 export class SignUp extends Component {
-  /* your code here... */
+  render() {
+    return(
+      <div>
+        <input type="text" placeholder="Username" />
+        <button>SignUp</button>
+      </div>
+    )
+  }
 }
 
 export class Blurb extends Component {
-  /* your code here... */
+  render() {
+    return(
+      <p>Blurb</p>
+    )
+  }
 }
 
 
@@ -64,6 +96,7 @@ export class Blurb extends Component {
 export class App extends Component {
 
   render() {
+    localStorage.setItem('loggedIn', "true")
     let isUserLoggedIn = localStorage.getItem('loggedIn')
     let componentToDisplay = isUserLoggedIn ?
       <Profile /> :
@@ -75,14 +108,15 @@ export class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 2</h4>
           <div className="exercise" id="spotcheck-2">
-            <Nav />
             {/* your code here... */}
+            <Nav />
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 3</h4>
           <div className="exercise" id="spotcheck-3">
+            {/* your code here... */}
             {componentToDisplay}
           </div>
         </div>
@@ -91,6 +125,7 @@ export class App extends Component {
           <h4 className="ex-title">Spotcheck 4</h4>
           <div className="exercise" id="spotcheck-4">
             {/* your code here... */}
+            <Banner/>
           </div>
         </div>
 
@@ -98,6 +133,7 @@ export class App extends Component {
           <h4 className="ex-title">Spotcheck 5</h4>
           <div className="exercise" id="spotcheck-5">
             {/* your code here... */}
+            <About/>
           </div>
         </div>
 
